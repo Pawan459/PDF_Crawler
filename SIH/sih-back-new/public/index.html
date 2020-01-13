@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <style>
+        a {
+            pointer-events: none;
+        }
+    </style>
+    </style>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="//localhost:3000/public/dom.js"></script>
+    <div id="test" style="margin:3px; border:2px solid black;height:900px;width:1500px;overflow:scroll"></div>
+
+</body>
+<script>
+
+    var cssPath = function (el) {
+        if (!(el instanceof Element)) return;
+        var path = [];
+        while (el.nodeType === Node.ELEMENT_NODE) {
+            var selector = el.nodeName.toLowerCase();
+            if (el.id) {
+                selector += '#' + el.id;
+            } else {
+                var sib = el, nth = 1;
+                while (sib.nodeType === Node.ELEMENT_NODE && (sib = sib.previousSibling) && nth++);
+                selector += ":nth-child(" + nth + ")";
+            }
+            path.unshift(selector);
+            el = el.parentNode;
+        }
+        return path.join(" > ");
+    }
+
+    var myExampleClickHandler = function (e) { 
+        window.opener.onSpawnMessage(cssPath(e));
+        myDomOutline.start(); 
+        close();
+    }
+
+    var myDomOutline = DomOutline({ onClick: myExampleClickHandler });
+
+    // Start outline:
+    $(document).ready(() => {
+        $("#test").load("http://localhost:3000/api/url/http%3A%2F%2Fwww.mospi.gov.in%2F", function () {
+            myDomOutline.start();
+        });
+    });
+</script>
+
+</html>

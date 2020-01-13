@@ -1,0 +1,8 @@
+{
+    "user": "sih",
+    "password": "sih#8912",
+    "db": "sih",
+    "dbHost": "fgethell.xyz",
+    "dbPort": 5432,
+    "appPort": 3001
+}

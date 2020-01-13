@@ -1,0 +1,9 @@
+{
+    "apps": [
+        {
+            "name": "sih-backend",
+            "script": "npm",
+            "args" : "start"
+        }
+    ]
+}

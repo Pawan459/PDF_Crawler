@@ -1,0 +1,16 @@
+{
+    "dev": {
+        "db":"sih",
+        "dbuser": "sih",
+        "dbpass": "sih#8912",
+        "dbhost": "fgethell.xyz",
+        "dbport": 5432
+    },
+    "production" :  {
+        "db":"sih",
+        "dbuser": "sih",
+        "dbpass": "sih#8912",
+        "dbhost": "fgethell.xyz",
+        "dbport": 5432
+    }
+}
