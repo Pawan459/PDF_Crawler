@@ -9,7 +9,7 @@
   "author": "Simran Singh",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "connect-pg-simple": "^5.0.0",
     "express": "^4.16.4",
     "express-session": "^1.15.6",
